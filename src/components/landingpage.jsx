@@ -1,18 +1,14 @@
 import React from 'react'
 import { Countries } from './countries/countries'
+import { NavBar } from './navbar/navbar'
 
 
 export const LandingPage = () => {
   return (
     <>
-    <nav className='navbar'>
-        <h1 className='main_title'>Where in the world</h1>
-        <div className='switch_theme'>
-            {/* icono */}
-            <p>Dark Mode</p>
-        </div>
-    </nav>
 
+    <NavBar/>
+    
     <div className='search_container'>
         <input type='text' className='search_country' placeholder='Search for a country...'/>
 

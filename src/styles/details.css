@@ -1,0 +1,26 @@
+.country_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+}
+
+
+.country_name {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.country {
+    margin-top: 40px;
+}
+
+.country_img {
+    width: 320px;
+
+
+}
+
+.country_details2 {
+    margin-top: 40px;
+}
