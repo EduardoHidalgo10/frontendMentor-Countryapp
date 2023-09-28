@@ -1,12 +1,11 @@
 import React from 'react'
-import { LandingPage } from './components/landingPage'
-
+import { Router } from './routers/index.jsx'
 
 
 export const App = () => {
   return (
     <>
-        <LandingPage/>
+        <Router/>
 
     </>
   )
