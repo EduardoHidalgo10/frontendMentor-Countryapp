@@ -24,6 +24,7 @@
     width: 100%;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
+    height: 199px;
     
 }
 
@@ -36,4 +37,14 @@
 .countries_container .country .country_content .country_name {
     font-weight: bold;
     font-size: 18px;
+}
+@media (min-width:575px) {
+    .countries_container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 5rem;
+        margin-top: 10px;
+    }
+
 }

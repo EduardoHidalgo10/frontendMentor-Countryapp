@@ -1,11 +1,22 @@
 .country_container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: fit-content;
 }
 
 
+.back_button {
+    margin: 30px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border: solid 1px lightgray;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+}
 .country_name {
     font-weight: bold;
     font-size: 25px;
@@ -23,4 +34,28 @@
 
 .country_details2 {
     margin-top: 40px;
+}
+.country_details3 {
+    margin-bottom: 20px;
+}
+
+.country_details3 .border_countries_title {
+    font-size: 18px;
+    font-weight: bold;
+
+
+}
+
+.country_details3 .border_countries {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+}
+
+.country_details3 .border_countries .border {
+    border: 1px solid lightgray;
+    text-align: center;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    width: 6rem;
+
 }

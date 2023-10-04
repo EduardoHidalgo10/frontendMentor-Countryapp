@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import { getCountries } from '../../data/getData'
+import React from 'react'
 import '../../styles/countries.css'
 import {useNavigate} from "react-router-dom"
 
 
-export const Countries = () => {
+export const Countries = ({countries,searchedCountry}) => {
     
-    const [countries, setCountries] = useState([])
+    
     const navigate = useNavigate();
 
-    
 
-    useEffect(() => {
-        setCountries(getCountries());
-    }, [])
-
-
-
-    const slicedCountries = countries.slice(0,5);
-
-
+   
 
 
   return (
         <div className='countries_container'>
-            {slicedCountries.map((country => (
+            {countries.map((country => (
             <div className='country' key={country.name}>
-                <img className='country_img' src={country.flag} alt='flag' title='flag'/>
+                <img className='country_img' src={country.flags.png} alt='flag' title='flag'/>
                 
                 <div className='country_content'>
                 <p onClick={() => navigate(country.name)} className='country_name'>{country.name}</p>

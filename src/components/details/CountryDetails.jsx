@@ -1,5 +1,5 @@
 import React from 'react'
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import { getCountryByName } from '../../helpers/getCountryByName';
 import { NavBar } from '../navbar/navbar';
 import '../../styles/details.css'
@@ -7,17 +7,18 @@ import '../../styles/details.css'
 export const CountryDetails = () => {
 
   const {name} = useParams();
-  
+  const navigate = useNavigate();
+
   const country = getCountryByName(name);
 
-  console.log(country)
- 
-  
+
   return (
     <>
       <NavBar/>
 
-      {/* <button>Back</button> */}
+
+
+      <button className='back_button' onClick={() => navigate('/')}>Back</button>
       <div className='country_container'>
         <div className='country'>
           <img className='country_img' src={country.flag}/>
@@ -37,6 +38,22 @@ export const CountryDetails = () => {
           <p className='country_info'><strong>Languages: </strong>{country.languages[0].name}</p>
 
           </div>
+
+        {
+          country.hasOwnProperty('borders')?
+          <div className='country_details3'>
+            <p className='border_countries_title'>Border Countries</p>
+              <div className='border_countries'>
+                
+                  {country.borders.map((border) => (
+                    <div className='border' key={border}>{border}</div>
+                  ))
+                  }
+              </div>
+              
+          </div>:''
+
+        }
 
         </div>
       </div>
