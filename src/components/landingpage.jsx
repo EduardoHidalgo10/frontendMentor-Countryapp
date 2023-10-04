@@ -16,8 +16,10 @@ export const LandingPage = () => {
   
   useEffect(() => {
     
+      setState((prevState) => ({ ...prevState, countries: getCountries()}));
     
-    setState((prevState) => ({...prevState,countries:getCountries()}));
+
+    
   }, [])
   
 
@@ -26,8 +28,12 @@ export const LandingPage = () => {
   
   const selectedCountry = state.countries.filter((region) => region.region === state.selectedRegion);
   
-  
 
+    console.log(searchCountry);
+
+    console.log(selectedCountry);
+
+  
 
 
   return (
@@ -45,12 +51,12 @@ export const LandingPage = () => {
 
     <div className='search_container'>
         <select className='region_selector' onChange={(e) => setState(prevState => ({...prevState,selectedRegion:e.target.value}))}>
-        <option selected hidden value=''>Filter by Region</option>
-            <option value='Africa'>Africa</option>
-            <option value='Americas'>Americas</option>
-            <option value='Asia'>Asia</option>
-            <option value='Europe'>Europe</option>
-            <option value='Oceania'>Oceania</option>
+        <option  hidden defaultValue=''>Filter by Region</option>
+            <option defaultValue='Africa'>Africa</option>
+            <option defaultValue='Americas'>Americas</option>
+            <option defaultValue='Asia'>Asia</option>
+            <option defaultValue='Europe'>Europe</option>
+            <option defaultValue='Oceania'>Oceania</option>
         </select>
 
     </div>
