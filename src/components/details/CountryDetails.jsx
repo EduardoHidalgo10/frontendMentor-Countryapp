@@ -15,14 +15,14 @@ export const CountryDetails = () => {
   return (
     <>
       <NavBar/>
-
-
-
       <button className='back_button' onClick={() => navigate('/')}>Back</button>
       <div className='country_container'>
         <div className='country'>
+      <div className='column1'>
           <img className='country_img' src={country.flag}/>
+      </div>
 
+    <div className='column2'>
           <div className='country_details'>
             <p className='country_name'>{country.name}</p>
             <p className='country_info'><strong>Native Name: </strong>{country.nativeName}</p>
@@ -54,6 +54,8 @@ export const CountryDetails = () => {
           </div>:''
 
         }
+    </div>
+
 
         </div>
       </div>

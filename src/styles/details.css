@@ -59,3 +59,40 @@
     width: 6rem;
 
 }
+/* responsive */
+@media(min-width:550px) {
+    .country_container {
+        width: 100%;
+        ;
+
+    }
+
+    .country_container .country {
+        display: flex;
+
+        gap: 100px;
+    }
+
+    .country_container .country .column2 {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+
+    .country_details2 {
+        margin-top: 65px;
+    }
+
+
+
+    .country_details3 .border_countries {
+        display: flex;
+
+    }
+
+    .country_img {
+        width: 500px;
+    }
+
+
+}
