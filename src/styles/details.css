@@ -69,13 +69,13 @@
 
     .country_container .country {
         display: flex;
-
         gap: 100px;
     }
 
     .country_container .country .column2 {
         display: grid;
         grid-template-columns: auto auto;
+        
     }
 
 

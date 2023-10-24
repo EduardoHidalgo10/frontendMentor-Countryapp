@@ -10,7 +10,13 @@ export const LandingPage = () => {
     searchedCountry:'',
     selectedRegion:[],
     countries:[]
+
   })
+
+  
+  
+
+
 
   
   
