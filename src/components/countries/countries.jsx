@@ -8,8 +8,8 @@ export const Countries = ({countries}) => {
     
     const navigate = useNavigate();
 
-
-   console.log(countries)
+    
+    
 
 
   return (

@@ -60,10 +60,10 @@
 
 }
 /* responsive */
-@media(min-width:550px) {
+@media(min-width:800px) {
     .country_container {
         width: 100%;
-        ;
+        
 
     }
 
@@ -86,7 +86,7 @@
 
 
     .country_details3 .border_countries {
-        display: flex;
+        display: grid;
         flex-wrap: wrap;
 
     }

@@ -21,11 +21,14 @@
 
 
 [data-color-scheme='light'] {
+    transition: color 0.4s ease-in;
     background-color: var(--VeryLightGray);
     color: var(--VeryDarkBlue);
   }
   
   [data-color-scheme='dark'] {
+    transition: color 0.4s ease-in;
+
     background-color: var(--VeryDarkBlueBackground);
     color: var(--White);
   }
@@ -62,8 +65,15 @@ body {
 }
 
 .navbar .switch_theme {
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
+
+.navbar .switch_theme p {
+    font-weight: bold;
+}
+
 
 .filter_container {
     width: 100%;
@@ -134,6 +144,7 @@ body {
         text-align: center;
     }
 
+  
     .search_container .search_country {
         width: 430px;
         font-size: 18px;

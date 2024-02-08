@@ -2,8 +2,8 @@ import data from './data.json';
 
 export const getCountries =  () => {
   try {
-    // You can now access the imported JSON data directly
     return data;
+    // console.log(data + 'a')
   } catch (error) {
     return error;
   }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoMoonSharp } from "react-icons/io5";
 
 export const NavBar = () => {
   const [colorScheme, setColorScheme] = useState('light');
@@ -19,8 +20,9 @@ export const NavBar = () => {
     <>
       <nav className='navbar'>
         <h1 className='main_title'>Where in the world</h1>
-        <div className='switch_theme'>
-          <p onClick={changeColorScheme}>Dark Mode</p>
+        <div onClick={changeColorScheme} className='switch_theme'>
+          <IoMoonSharp size={20}/>
+          <p>Dark Mode</p>
         </div>
       </nav>
     </>
