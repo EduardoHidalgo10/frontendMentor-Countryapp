@@ -87,6 +87,7 @@
 
     .country_details3 .border_countries {
         display: flex;
+        flex-wrap: wrap;
 
     }
 
