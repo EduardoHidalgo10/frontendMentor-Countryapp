@@ -3,13 +3,13 @@ import '../../styles/countries.css'
 import {useNavigate} from "react-router-dom"
 
 
-export const Countries = ({countries,searchedCountry}) => {
+export const Countries = ({countries}) => {
     
     
     const navigate = useNavigate();
 
 
-   
+   console.log(countries)
 
 
   return (

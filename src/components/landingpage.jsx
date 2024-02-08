@@ -1,77 +1,44 @@
-import React, { useEffect, useState } from 'react'
-import { Countries } from './countries/countries'
-import { NavBar } from './navbar/navbar'
-import { getCountries } from '../data/getData'
-
+import React, { useEffect, useState } from 'react';
+import { Countries } from './countries/countries';
+import { NavBar } from './navbar/navbar';
+import { getCountries } from '../data/getData';
+import SearchBar from './searchbar/searchBar';
 
 export const LandingPage = () => {
+  const [state, setState] = useState({
+    searchedCountry: '',
+    selectedRegion: [],
+    countries: getCountries(),
+  });
 
-  const [state,setState] = useState({
-    searchedCountry:'',
-    selectedRegion:[],
-    countries:[]
+  const handleSearchChange = (searchedCountry) => {
+    setState((prevState) => ({ ...prevState, searchedCountry }));
+  };
 
-  })
-
-  
-  
-
-
-
-  
-  
-  useEffect(() => {
-    
-      setState((prevState) => ({ ...prevState, countries: getCountries()}));
-    
-
-    
-  }, [])
-  
-
-  const searchCountry = state.countries.filter((country) => country.name.toLowerCase() === state.searchedCountry.toLowerCase());
-
-  
-  const selectedCountry = state.countries.filter((region) => region.region === state.selectedRegion);
-  
-
-    console.log(searchCountry);
-
-    console.log(selectedCountry);
+  const handleSelectChange = (selectedRegion) => {
+    setState((prevState) => ({ ...prevState, selectedRegion }));
+  };
 
   
 
+  const filteredByRegion = state.selectedRegion.length > 0
+    ? state.countries.filter((country) => state.selectedRegion.includes(country.region))
+    : state.countries;
+
+  const filteredData = filteredByRegion.filter((country) => {
+    return country.name.toLowerCase().includes(state.searchedCountry.toLowerCase());
+  });
 
   return (
     <>
-
-    <NavBar/>
-    
-
-    <div className='filter_container'>
-    <div className='search_container'>
-        <input type='text' className='search_country' placeholder='Search for a country...' 
-        onChange={(e) => setState(prevState => ({...prevState,searchedCountry:e.target.value}))}/>
-
-    </div>
-
-    <div className='search_container'>
-        <select className='region_selector' onChange={(e) => setState(prevState => ({...prevState,selectedRegion:e.target.value}))}>
-        <option  hidden defaultValue=''>Filter by Region</option>
-            <option defaultValue='Africa'>Africa</option>
-            <option defaultValue='Americas'>Americas</option>
-            <option defaultValue='Asia'>Asia</option>
-            <option defaultValue='Europe'>Europe</option>
-            <option defaultValue='Oceania'>Oceania</option>
-        </select>
-
-    </div>
-    </div>
-
-    <Countries countries={state.countries} searchedCountry={state.searchedCountry}/>
-
+      <NavBar />
+      <div className='filter_container'>
+        <SearchBar handleSearchChange={handleSearchChange} handleSelectChange={handleSelectChange} />
+      </div>
+      <Countries
+        countries={filteredData} // Use the combined filtered data
+        searchedCountry={state.searchedCountry}
+      />
     </>
-    
-
-  )
-}
+  );
+};
