@@ -4,6 +4,8 @@ import { NavBar } from './navbar/navbar';
 import { getCountries } from '../data/getData';
 import SearchBar from './searchbar/searchBar';
 
+
+
 export const LandingPage = () => {
   const [state, setState] = useState({
     searchedCountry: '',
@@ -53,6 +55,7 @@ export const LandingPage = () => {
       <div className='filter_container'>
         <SearchBar handleSearchChange={handleSearchChange} handleSelectChange={handleSelectChange} />
       </div>
+      
       <Countries
         countries={filteredData} 
         searchedCountry={state.searchedCountry}

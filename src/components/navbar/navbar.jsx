@@ -8,6 +8,8 @@ export const NavBar = () => {
     const root = document.documentElement;
     console.log(root)
     if (colorScheme === 'light') {
+          root.style.setProperty('--color-transition', 'color 0.5s ease-in-out');
+
       root.setAttribute('data-color-scheme', 'dark');
       setColorScheme('dark');
     } else {

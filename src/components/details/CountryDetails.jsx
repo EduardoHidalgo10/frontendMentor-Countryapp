@@ -3,6 +3,10 @@ import {useNavigate, useParams} from 'react-router-dom';
 import { getCountryByName } from '../../helpers/getCountryByName';
 import { NavBar } from '../navbar/navbar';
 import '../../styles/details.css'
+import 'animate.css';
+
+
+
 
 export const CountryDetails = () => {
 
@@ -16,7 +20,7 @@ export const CountryDetails = () => {
     <>
       <NavBar/>
       <button className='back_button' onClick={() => navigate('/')}>Back</button>
-      <div className='country_container'>
+      <div className='country_container animate__animated animate__fadeIn'>
         <div className='country'>
       <div className='column1'>
           <img className='country_img' src={country.flag}/>
@@ -26,7 +30,7 @@ export const CountryDetails = () => {
           <div className='country_details'>
             <p className='country_name'>{country.name}</p>
             <p className='country_info'><strong>Native Name: </strong>{country.nativeName}</p>
-            <p className='country_info'><strong>Population: </strong>{country.population}</p>
+            <p className='country_info'><strong>Population: </strong>{country.population.toLocaleString('en-US')}</p>
             <p className='country_info'><strong>Region: </strong>{country.region}</p>
             <p className='country_info'><strong>Sub Region: </strong>{country.subregion}</p>
             <p className='country_info'><strong>Capital: </strong>{country.capital}</p>
